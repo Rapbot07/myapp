@@ -1,14 +1,15 @@
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
-  
+class:UserTest :: ActiveSupport::TestCase
+
+
   validates :name,  presence: true
   validates :email, presence: true
-end
 
   def setup
   	@user = User.name(name: "Example User", email: "user@example.com")
-  					  password: "foobar", password_confirmation: "foobar"
+  					  password "foobar" 
+              password_confirmation "foobar"
 end
 
 test "should be valid" do
@@ -67,4 +68,3 @@ test "password should have a minimum length" do
     assert_not @user.valid?
    end
 end
-
