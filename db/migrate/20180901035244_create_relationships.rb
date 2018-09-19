@@ -4,7 +4,7 @@ class CreateRelationships < ActiveRecord::Migration
       t.integer :follower_id, index: true
       t.integer :followed_id, index: true
 
-      t.timestamps null: flase
+      t.timestamps null: false
     end
     add_index :relationships, [:follower_id, :followed_id], unique: true
   end
